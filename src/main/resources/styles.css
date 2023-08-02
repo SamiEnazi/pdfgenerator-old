@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  font-size: 14pt;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: ArabicSTC;
+  src: url(./resources/NotoSansArabic-Light.ttf);
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
+}
+
+@font-face {
+  font-family: STCBase;
+  src: url(./resources/STCForward-Regular.ttf);
+}
+
+/* @font-face {
+  font-family: STCBase-Light;
+  src: url(./resources/STCForward-Light.ttf);
+  font-weight: lighter;
+} */
+
+/* Set page size to A4 */
+@page {
+  size: A4;
+  margin: 0;
+}
+/* Page break before the specified element */
+.page-break-before {
+  page-break-before: always;
+}
+
+/* Page break after the specified element */
+.page-break-after {
+  page-break-after: always;
+}
+
+.page-break-inside {
+  page-break-inside: avoid;
+}
+
+/* Set body size to A4 and remove default margins */
+/* body {
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+} */
+
+.page {
+  margin: 0 auto;
+}
+
+/* Content container */
+.content {
+  width: 100%;
+  padding: 0 2.2cm;
+  /* margin: 0 2.5cm; */
+  /*margin: auto; */
+  /* Make the content fill the full height of the page */
+}
+
+/* Start .digital-contract-first */
+.digital-contract-first *:lang(en) {
+  font-family: "STCBase";
+  font-weight: lighter;
+}
+
+.digital-contract-first *:lang(ar) {
+  font-family: "ArabicSTC";
+}
+
+.digital-contract-first .no-border span {
+  font-family: "STCBase" !important;
+  font-weight: lighter !important;
+}
+
+/* Bill styles */
+.digital-contract-first table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.digital-contract-first span {
+  margin: 0;
+  padding: 0;
+  color: black;
+  /* font-size: 10pt; */
+  font-weight: normal;
+}
+
+.digital-contract-first th,
+.digital-contract-first td {
+  border-bottom: 1px solid #888;
+  vertical-align: top;
+  padding: 3px 0;
+}
+
+.digital-contract-first th {
+  color: #8a189c;
+}
+
+.bill-header {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.bill-header img {
+  width: 100%;
+}
+
+.bill-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.digital-contract-first {
+  margin-top: 40px;
+}
+
+.digital-contract-first td[align="center"] {
+  font-family: "STCBase";
+  max-width: 200px;
+  overflow-wrap: break-word;
+  font-size: 12pt;
+}
+
+.digital-contract-first th[align="left"] {
+  min-width: 25%;
+  /* width: 250px; */
+  max-width: 250px;
+}
+
+.digital-contract-first th[align="right"] {
+  min-width: 25%;
+  /* width: 250px; */
+  max-width: 250px;
+}
+
+.digital-contract-first table tr {
+  height: 1.5rem;
+}
+
+.digital-contract-first .no-border table * {
+  border: 0px transparent !important;
+}
+
+.digital-contract-first .no-border table th {
+  min-width: auto;
+}
+
+.digital-contract-first .no-border table {
+  width: 100%;
+}
+
+.digital-contract-first .no-border table th,
+.digital-contract-first .no-border table td,
+.digital-contract-first .no-border table span {
+  font-size: 11pt;
+  overflow-wrap: break-word;
+}
+
+.digital-contract-first .no-border th[align="right"] {
+  width: 20%;
+}
+
+.digital-contract-first .no-border th[align="left"] {
+  width: 25%;
+}
+
+.digital-contract-first .no-border td table {
+  width: 100%;
+}
+.digital-contract-first .no-border td * {
+  padding: 1px;
+}
+
+.digital-contract-first .no-border table tr {
+  height: 20px;
+}
+/* End .digital-contract-first */
+
+
