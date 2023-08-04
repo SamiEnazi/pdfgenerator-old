@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generic Bill - A4 Page</title>
-    <link rel="stylesheet" href='./styles.css'>
+    <link rel="stylesheet" href='src\main\resources\styles.css'>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <img src='./resources/new.PNG' alt="">
         </div>
         <div class="content">
-            <div class="digital-contract-first">
+            <div class="customer-info" style="color:blue">
                 <table>
                     <tr>
                         <th align="left">Customer Name</th>
@@ -53,19 +53,19 @@
                                 </tr>
                                 <tr>
                                     <th align="left">Neighborhood: <span></span></th>
-                                    <th align="right">اسم الحي: <span> dda</span> </th>
+                                    <th align="right">اسم الحي: <span> dda</span></th>
                                 </tr>
                                 <tr>
                                     <th align="left">City: <span>-</span></th>
-                                    <th align="right">اسم المدينة: <span>-</span> </th>
+                                    <th align="right">اسم المدينة: <span>-</span></th>
                                 </tr>
                                 <tr>
                                     <th align="left">Postal Code: <span>33332</span></th>
                                     <th align="right">الرمز البريدي: <span>33332</span></th>
                                 </tr>
                                 <tr>
-                                    <th align="left">Additional No.<span></span></th>
-                                    <th align="right">الرقم الاضافي: <span></span> </th>
+                                    <th align="left">Additional No.:<span></span></th>
+                                    <th align="right">الرقم الاضافي: <span></span></th>
                                 </tr>
                             </table>
                         <th align="right">العنوان الوطني</th>
@@ -122,12 +122,19 @@
             <img src="./resources/new.PNG" alt="">
         </div>
         <div class="content">
-            <div class="digital-contract-details">
+            <div class="contract-details">
+
+
+                <!-- Main product Monthly Recurrent Charges - الرسوم الشهرية المتكررة للخدمة -->
+                <div class="table-label">
+                    <p lang="en" align="left">Main product Monthly Recurrent Charges</p>
+                    <p lang="ar" align="right">الرسوم الشهرية المتكررة للخدمة</p>
+                </div>
                 <table>
-                    <tr>
+                    <tr lang="en">
                         <th>#</th>
-                        <th>Root Product</th>
-                        <th>Product name</th>
+                        <th class="min-width">Root Product</th>
+                        <th class="min-width">Product name</th>
                         <th>Bandwith Speed</th>
                         <th>Qty.</th>
                         <th>Start price MRC</th>
@@ -136,7 +143,7 @@
                         <th>Extended net price</th>
                         <th>Commitment Duration in months/years</th>
                     </tr>
-                    <tr>
+                    <tr lang="ar">
                         <th>#</th>
                         <th>نوع الخدمة</th>
                         <th>اسم الخدمة/المنتج</th>
@@ -145,13 +152,274 @@
                         <th>الرسم الشهري</th>
                         <th>نسبة الخصم</th>
                         <th>السعر بعد الخصم</th>
-                        <th>الرسول الاجمالية للكمية</th>
+                        <th>الرسوم الاجمالية للكمية</th>
                         <th>مدة الالتزام بالأشهر/السنوات</th>
+                    </tr>
+                    <!-- Bellow Insert Data 10 cols -->
+                    <tr>
+                        <td>1</td>
+                        <td>SDWANB</td>
+                        <td>SDWAN</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1000</td>
+                        <td>5.34%</td>
+                        <td>946.6</td>
+                        <td>946.6</td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <!-- Installation fees/Non-recurrent Charges - رسوم التأسيس/الرسوم غير المتكررة -->
+                <div class="table-label">
+                    <p lang="en" align="left">Installation fees/Non-recurrent Charges</p>
+                    <p lang="ar" align="right">رسوم التأسيس/الرسوم غير المتكررة</p>
+                </div>
+                <table>
+                    <tr lang="en">
+                        <th>#</th>
+                        <th class="min-width">Root Product</th>
+                        <th class="min-width">Product name</th>
+                        <th>Bandwith Speed</th>
+                        <th>Qty.</th>
+                        <th>Start price MRC</th>
+                        <th>Extended net price</th>
+                    </tr>
+                    <tr lang="ar">
+                        <th>#</th>
+                        <th>نوع الخدمة</th>
+                        <th>اسم الخدمة/المنتج</th>
+                        <th>النطاق السرعة</th>
+                        <th>الكمية</th>
+                        <th>الرسم الشهري</th>
+                        <th>مدة الالتزام بالأشهر/السنوات</th>
+                    </tr>
+                    <!-- Bellow Insert Data 7 cols -->
+                    <tr>
+                        <td>1</td>
+                        <td>SDWANB </td>
+                        <td>Edge Router1 OTC</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1200</td>
+                        <td>1200</td>
+                    </tr>
+                </table>
+
+                <!-- VAS Monthly Recurrent Charges - الرسوم الشهرية المتكررة للخدمات المضافة-->
+                <div class="table-label">
+                    <p lang="en" align="left">VAS Monthly Recurrent Charges</p>
+                    <p lang="ar" align="right">الرسوم الشهرية المتكررة للخدمات المضافة</p>
+                </div>
+                <table>
+                    <tr lang="en">
+                        <th>#</th>
+                        <th class="min-width">Root Product</th>
+                        <th class="min-width">Product name</th>
+                        <th>Bandwith Speed</th>
+                        <th>Qty.</th>
+                        <th>Start price MRC</th>
+                        <th>Extended net price</th>
+                    </tr>
+                    <tr lang="ar">
+                        <th>#</th>
+                        <th>نوع الخدمة</th>
+                        <th>اسم الخدمة/المنتج</th>
+                        <th>النطاق السرعة</th>
+                        <th>الكمية</th>
+                        <th>الرسم الشهري</th>
+                        <th>مدة الالتزام بالأشهر/السنوات</th>
+                    </tr>
+                    <!-- Bellow Insert Data 7 cols -->
+                    <tr>
+                        <td>1</td>
+                        <td>SDWANB </td>
+                        <td>Edge Router1 OTC</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1200</td>
+                        <td>1200</td>
+                    </tr>
+                </table>
+
+                <!-- Device Details (if any) - الرسوم الشهرية المتكررة للخدمات المضافة-->
+                <div class="table-label">
+                    <p lang="en" align="left">Device Details -if any-</p>
+                    <p lang="ar" align="right">تفاصيل الجهاز -إن وجد-</p>
+                </div>
+                <table>
+                    <tr lang="en">
+                        <th>#</th>
+                        <th class="min-width">Device Model Name</th>
+                        <th>Device Memory</th>
+                        <th>Color</th>
+                        <th>Qty</th>
+                        <th>IMEI number</th>
+                    </tr>
+                    <tr lang="ar">
+                        <th>#</th>
+                        <th>اسم/نوع الجهاز</th>
+                        <th>السعة</th>
+                        <th>اللون</th>
+                        <th>الكمية</th>
+                        <th>الرقم التسلسلي</th>
+                    </tr>
+                    <!-- Bellow Insert Data 7 cols -->
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>SDWANB </td>
+                        <td>Edge Router1 OTC</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1200</td>
+                        <td>1200</td>
+                    </tr> -->
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="page-break-before"></div>
+        <div class="bill-header">
+            <img src="./resources/new.PNG" alt="">
+        </div>
+        <div class="content">
+            <div class="employee-info">
+                <!-- Service Provider Employee info - معلومات الموظف مقدم الخدمة -->
+                <div class="table-label">
+                    <p lang="en" align="left">Service Provider Employee info</p>
+                    <p lang="ar" align="right">معلومات الموظف مقدم الخدمة</p>
+                </div>
+                <table>
+                    <tr>
+                        <th align="left" lang="en">Employee Name:</th>
+                        <td align="center">TEST_BBLEAD14 -</td>
+                        <th align="right" lang="ar">اسم الموظف:</th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">ID Number:</th>
+                        <td align="center">248058</td>
+                        <th align="right" lang="ar">رقم الهوية:</th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">Nationality:</th>
+                        <td align="center">Saudi Arabia</td>
+                        <th align="right" lang="ar">الجنسية:</th>
+                    </tr>
+                </table>
+                <!-- Main product Monthly Recurrent Charges - الرسوم الشهرية المتكررة للخدمة -->
+                <div class="table-label">
+                    <p lang="en" align="left">Customer Approval (E-signature)</p>
+                    <p lang="ar" align="right">موافقة العميل التوقيع الالكتروني</p>
+                </div>
+                <table>
+                    <tr>
+                        <th align="left" lang="en">Approval Transaction No.</th>
+                        <td align="center">3-O9AFS0W</td>
+                        <th align="right" lang="ar">رقم عملية الموافقة:</th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">Approval Transaction Date:</th>
+                        <td align="center"></td>
+                        <th align="right" lang="ar">تاريخ عملية الموافقة</th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">Approval Transaction Time::</th>
+                        <td align="center"></td>
+                        <th align="right" lang="ar">وقت العملية الموافقة</th>
+                    </tr>
+                </table>
+                <table class="no-border">
+                    <tr>
+                        <th align="left" lang="en">
+                            You may review the service details and
+                            features by visiting company website,
+                            Business page through following link:
+                        </th>
+                        <td></td>
+                        <th align="right" lang="ar">
+                            يمكن الاطلاع على تفاصيل الخدمات ومميزاتها
+                            على موقع الشركة في صفحة قطاع
+                            الأعمال من خلال الرابط التالي :</th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">
+                            <a href="https://www.stc.com.sa/content/stc/sa/en/business/connect.html" target="_blank">
+                                https://www.stc.com.sa/wps/wcm/connect/english/business/business
+                            </a>
+                        </th>
+                        <td></td>
+                        <th align="right" lang="ar">
+                            <a href="https://www.stc.com.sa/content/stc/sa/ar/business/connect.html" target="_blank">
+                                https://www.stc.com.sa/wps/wcm/connect/english/business/business
+                            </a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">
+                            To view the Service Level Agreement,
+                            please visit the following link
+                        </th>
+                        <td></td>
+                        <th align="right" lang="ar">
+                            للاطلاع على اتفاقية مستوى
+                            الخدمة وبنودها،فضلاً الانتقال إلى الرابط التالي:
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">
+                            <a href="https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/sla" target="_blank">
+                                https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/sla
+                            </a>
+                        </th>
+                        <td></td>
+                        <th align="right" lang="ar">
+                            <a href="https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/sla" target="_blank">
+                                https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/sla
+                            </a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">
+                            By approving this contract, I
+                            acknowledge that I have read and
+                            accept all the general &amp; specific terms
+                            and conditions related to this contract
+                            published on the following link:
+                        </th>
+                        <td></td>
+                        <th align="right" lang="ar">
+                            بالموافقة على هذا العقد أقر بالاطلاع على الشروط
+                            والأحكام العامة والخاصة لهذا العقد والمتاحة على
+                            الرابط التالي وقبولها:
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">
+                            <a href="https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/dgt-terms-and-conditions" target="_blank">
+                                https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/dgt-terms-and-conditions
+                            </a>
+                        </th>
+                        <td></td>
+                        <th align="right" lang="ar">
+                            <a href="https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/dgt-terms-and-conditions" target="_blank">
+                                https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/dgt-terms-and-conditions
+                            </a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="left" lang="en">
+                            <img src="/resources/qr_left.png" width="100px" alt="">
+                        </th>
+                        <td>
+                        </td>
+                        <th align="right" lang="ar">
+                            <img src="./resources/qr_right.png" width="100px" alt="">
+                        </th>
                     </tr>
                 </table>
             </div>
         </div>
-        <div class="page-break-after"></div>
     </div>
 </body>
 <script>
@@ -167,6 +435,19 @@
         p.setAttribute('lang', lang);
         p.setAttribute('dir', dir);
     });
+    [].forEach.call(document.getElementsByTagName('p'), function (p) {
+        var lang, dir;
+        if (arabicPatt.test(p.textContent)) {
+            lang = 'ar'; dir = 'rtl';
+        }
+        else {
+            lang = 'en'; dir = 'ltr';
+        }
+        p.setAttribute('lang', lang);
+        p.setAttribute('dir', dir);
+    });
+
+
 </script>
 
 </html>
