@@ -10,11 +10,11 @@ public class util {
 		return base;
 	}
 
-	public static String createRows(String[][] rows,boolean index) {
+	public static String createRows(String[][] rows,boolean withIndex) {
 		StringBuilder sb = new StringBuilder("");
 		for (int i = 0; i < rows.length; i++) {
 			sb.append("<tr>");
-			if (index) {				
+			if (withIndex) {				
 				sb.append(String.format("<td>%d</td>", i + 1));
 			}
 			for (int j = 0; j < rows[i].length; j++) {

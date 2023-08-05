@@ -3,6 +3,8 @@ package sa.stc.app;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
@@ -35,49 +37,42 @@ public class InputToHtml {
 			String template = StreamUtils.copyToString(new ClassPathResource("pdf_templat.html").getInputStream(),
 					Charset.forName("utf-8"));
 
-			template = template.replace("{{CustomerName}}", "Sami");
-			template = template.replace("{{CustomerID}}", "7788990076");
-			template = template.replace("{{CRDate}}", "28-08-1434");
-			template = template.replace("{{CRCity}}", "Riyadh");
+			Map<String, String> values = new HashMap<String, String>();
 
-			// National Address
-			template = template.replace("{{BuildingNumber}}", "66");
-			template = template.replace("{{Street}}", "fwerfgwer");
-			template = template.replace("{{Neighboorhood}}", "");
-			template = template.replace("{{City}}", "-");
-			template = template.replace("{{PostalCode}}", "33332");
-			template = template.replace("{{AdditionalNo}}", "");
+			values.put("{{CustomerName}}", "Sami");
+			values.put("{{CustomerID}}", "7788990076");
+			values.put("{{CRDate}}", "28-08-1434");
+			values.put("{{CRCity}}", "Riyadh");
+			values.put("{{BuildingNumber}}", "66");
+			values.put("{{Street}}", "fwerfgwer");
+			values.put("{{Neighboorhood}}", "");
+			values.put("{{City}}", "-");
+			values.put("{{PostalCode}}", "33332");
+			values.put("{{AdditionalNo}}", "");
+			values.put("{{AuthPersonName}}", "Balivadas Sowmya");
+			values.put("{{AuthPersonID}}", "2-1570-3329-7");
+			values.put("{{AuthPersonContact}}", "532967786");
+			values.put("{{AuthPersonEmail}}", "smatta.c@stc.com.sa");
+			values.put("{{AuthPersonNationality}}", "Saudi Arabia");
+			values.put("{{ContractNumber}}", "3-O9A3FF5");
+			values.put("{{ContractDate}}", "");
+			values.put("{{ContractPeriod}}", "2");
 
-			template = template.replace("{{AuthPersonName}}", "Balivadas Sowmya");
-			template = template.replace("{{AuthPersonID}}", "2-1570-3329-7");
-			template = template.replace("{{AuthPersonContact}}", "532967786");
-			template = template.replace("{{AuthPersonEmail}}", "smatta.c@stc.com.sa");
-			template = template.replace("{{AuthPersonNationality}}", "Saudi Arabia");
-			template = template.replace("{{ContractNumber}}", "3-O9A3FF5");
-			template = template.replace("{{ContractDate}}", "");
-			template = template.replace("{{ContractPeriod}}", "2");
-
-			// Main product Monthly Recurrent Charges START
 			String productDetails[][] = {
 					{ "SDWANB", "SDWAN", "", "1", "1000", "5.34%", "956.7", "675.4", "" },
 					{ "SDWANB", "SDWAN", "", "1", "1000", "5.34%", "956.7", "675.4", "" },
 					{ "SDWANB", "SDWAN", "", "1", "1000", "5.34%", "956.7", "675.4", "" }
 			};
 
-			template = template.replace("{{MainProductMRC}}", util.createRows(productDetails,true));
-			// Main product Monthly Recurrent Charges END
+			values.put("{{MainProductMRC}}", util.createRows(productDetails, true));
 
-			// Installation fees/Non-recurrent Charges START
 			String installationFeesNRC[][] = {
 					{ "SDWANB", "Edge Router1 OTC", "", "1", "1200", "1200" },
 					{ "SDWANB", "Edge Router1 OTC", "", "1", "1200", "1200" },
 					{ "SDWANB", "Edge Router1 OTC", "", "1", "1200", "1200" }
 			};
 
-			template = template.replace("{{InstallationFees/NRC}}", util.createRows(installationFeesNRC,true));
-			// Installation fees/Non-recurrent Charges END
-
-			// VAS Monthly Recurrent Charges START
+			values.put("{{InstallationFees/NRC}}", util.createRows(installationFeesNRC, true));
 
 			String VASMonthlyRecurrentCharges[][] = {
 					{ "SDWANB", "Edge Router1", "", "1", "0", "0" },
@@ -85,30 +80,29 @@ public class InputToHtml {
 					{ "SDWANB", "Edge Router1", "", "1", "0", "0" }
 			};
 
-			template = template.replace("{{VASMonthlyRecurrentCharges}}", util.createRows(VASMonthlyRecurrentCharges,true));
+			values.put("{{VASMonthlyRecurrentCharges}}", util.createRows(VASMonthlyRecurrentCharges, true));
 
-			// VAS Monthly Recurrent Charges END
-
-			// Device Details -any if- START
 			String DeviceDetails[][] = {};
-			template = template.replace("{{DeviceDetails}}", util.createRows(DeviceDetails,true));
-			// Device Details -any if- END
 
-			template = template.replace("{{EmployeeName}}", "TEST_BBLEAD14 -");
-			template = template.replace("{{IDNumber}}", "248058");
-			template = template.replace("{{Nationality}}", "Saudi Arabia");
-			template = template.replace("{{ApprovalTransactionNumber}}", "3-O9AFS0W");
-			template = template.replace("{{ApprovalTransactionDate}}", "");
-			template = template.replace("{{ApprovalTransactionTime}}", "");
+			values.put("{{DeviceDetails}}", util.createRows(DeviceDetails, true));
 
-			// Appendix: List of Services START
+			values.put("{{EmployeeName}}", "TEST_BBLEAD14 -");
+			values.put("{{IDNumber}}", "248058");
+			values.put("{{Nationality}}", "Saudi Arabia");
+			values.put("{{ApprovalTransactionNumber}}", "3-O9AFS0W");
+			values.put("{{ApprovalTransactionDate}}", "");
+			values.put("{{ApprovalTransactionTime}}", "");
+
 			String appendixList[][] = {
 					{ "JEDDAH-JEDDAH SDWAN10164", "", "SDWAN" },
 					{ "JEDDAH-JEDDAH SDWAN10164", "", "SDWAN" },
 					{ "JEDDAH-JEDDAH SDWAN10164", "", "SDWAN" }
 			};
 
-			template = template.replace("{{AppendixList}}", util.createRows(appendixList,false));
+			values.put("{{AppendixList}}", util.createRows(appendixList, false));
+
+			template = util.replaceAllWithMap(template, values);
+
 			// Appendix: List of Services END
 
 			// Map<String,String> map = new HashMap<String, String>();
