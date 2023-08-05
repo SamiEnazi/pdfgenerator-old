@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generic Bill - A4 Page</title>
-    <link rel="stylesheet" href='src\main\resources\styles.css'>
+    <link rel="stylesheet" href='./styles.css'>
 </head>
 
 <body>
@@ -15,26 +15,26 @@
             <img src='./resources/new.PNG' alt="">
         </div>
         <div class="content">
-            <div class="customer-info" style="color:blue">
+            <div class="customer-info">
                 <table>
                     <tr>
                         <th align="left">Customer Name</th>
-                        <td align="center"></td>
+                        <td align="center">{{CustomerName}}</td>
                         <th align="right">اسم العميل</th>
                     </tr>
                     <tr>
                         <th align="left">Customer ID/CR No.</th>
-                        <td align="center">7788990076</td>
+                        <td align="center">{{CustomerID}}</td>
                         <th align="right">هوية العميل/السجل التجاري</th>
                     </tr>
                     <tr>
                         <th align="left">CR Date</th>
-                        <td align="center">28-08-1434</td>
+                        <td align="center">{{CRDate}}</td>
                         <th align="right">تاريخ السجل التجاري</th>
                     </tr>
                     <tr>
                         <th align="left">CR City</th>
-                        <td align="center">Riyadh</td>
+                        <td align="center">{{CRCity}}</td>
                         <th align="right">مدينة السجل التجاري</th>
                     </tr>
                 </table>
@@ -44,28 +44,28 @@
                         <td>
                             <table>
                                 <tr>
-                                    <th align="left">Building No. <span>66</span></th>
-                                    <th align="right">رقم المبنى: <span>66</span></th>
+                                    <th align="left">Building No. <span>{{BuildingNumber}}</span></th>
+                                    <th align="right">رقم المبنى: <span>{{BuildingNumber}}</span></th>
                                 </tr>
                                 <tr>
-                                    <th align="left">Street Name: <span>gregerg</span></th>
-                                    <th align="right">اسم الشارع: <span>gregerg</span></th>
+                                    <th align="left">Street Name: <span>{{Street}}</span></th>
+                                    <th align="right">اسم الشارع: <span>{{Street}}</span></th>
                                 </tr>
                                 <tr>
-                                    <th align="left">Neighborhood: <span></span></th>
-                                    <th align="right">اسم الحي: <span> dda</span></th>
+                                    <th align="left">Neighborhood: <span>{{Neighboorhood}}</span></th>
+                                    <th align="right">اسم الحي: <span>{{Neighboorhood}}</span></th>
                                 </tr>
                                 <tr>
-                                    <th align="left">City: <span>-</span></th>
-                                    <th align="right">اسم المدينة: <span>-</span></th>
+                                    <th align="left">City: <span>{{City}}</span></th>
+                                    <th align="right">اسم المدينة: <span>{{City}}</span></th>
                                 </tr>
                                 <tr>
-                                    <th align="left">Postal Code: <span>33332</span></th>
-                                    <th align="right">الرمز البريدي: <span>33332</span></th>
+                                    <th align="left">Postal Code: <span>{{PostalCode}}</span></th>
+                                    <th align="right">الرمز البريدي: <span>{{PostalCode}}</span></th>
                                 </tr>
                                 <tr>
-                                    <th align="left">Additional No.:<span></span></th>
-                                    <th align="right">الرقم الاضافي: <span></span></th>
+                                    <th align="left">Additional No.:<span>{{AdditionalNo}}</span></th>
+                                    <th align="right">الرقم الاضافي: <span>{{AdditionalNo}}</span></th>
                                 </tr>
                             </table>
                         <th align="right">العنوان الوطني</th>
@@ -74,42 +74,42 @@
                 <table>
                     <tr>
                         <th align="left">Authorized Person Name</th>
-                        <td align="center">Balivadas Sowmya</td>
+                        <td align="center">{{AuthPersonName}}</td>
                         <th align="right">اسم الشخص المفوض</th>
                     </tr>
                     <tr>
                         <th align="left">Authorized Person ID No.</th>
-                        <td align="center">2-1570-3329-7</td>
+                        <td align="center">{{AuthPersonID}}</td>
                         <th align="right">رقم هوية الشخص المفوض</th>
                     </tr>
                     <tr>
                         <th align="left">Autorized Person Contact No.</th>
-                        <td align="center">532967786</td>
+                        <td align="center">{{AuthPersonContact}}</td>
                         <th align="right">رقم اتصال الشخص المفوض</th>
                     </tr>
                     <tr>
                         <th align="left">Authorized Person Email Address</th>
-                        <td align="center">smatta.c@stc.com.sa</td>
+                        <td align="center">{{AuthPersonEmail}}</td>
                         <th align="right">البريد الإلكتروني للشخص المفوض</th>
                     </tr>
                     <tr>
                         <th align="left">Authorized Person Nationality</th>
-                        <td align="center">Saudi Arabia</td>
+                        <td align="center">{{AuthPersonNationality}}</td>
                         <th align="right">جنسية المفوض</th>
                     </tr>
                     <tr>
                         <th align="left">Contract Number:</th>
-                        <td align="center">3-O9A3FF5</td>
+                        <td align="center">{{ContractNumber}}</td>
                         <th align="right">رقم العقد</th>
                     </tr>
                     <tr>
                         <th align="left">Contract Date:</th>
-                        <td align="center"></td>
+                        <td align="center">{{ContractDate}}</td>
                         <th align="right">تاريخ العقد</th>
                     </tr>
                     <tr>
                         <th align="left">Contract Period in months(auto renewed)</th>
-                        <td align="center">2</td>
+                        <td align="center">{{ContractPeriod}}</td>
                         <th align="right">مدة العقد بالأشهر متجدد تلقائيا</th>
                     </tr>
                 </table>
@@ -156,18 +156,7 @@
                         <th>مدة الالتزام بالأشهر/السنوات</th>
                     </tr>
                     <!-- Bellow Insert Data 10 cols -->
-                    <tr>
-                        <td>1</td>
-                        <td>SDWANB</td>
-                        <td>SDWAN</td>
-                        <td></td>
-                        <td>1</td>
-                        <td>1000</td>
-                        <td>5.34%</td>
-                        <td>946.6</td>
-                        <td>946.6</td>
-                        <td></td>
-                    </tr>
+                    {{MainProductMRC}}
                 </table>
 
                 <!-- Installation fees/Non-recurrent Charges - رسوم التأسيس/الرسوم غير المتكررة -->
@@ -182,7 +171,7 @@
                         <th class="min-width">Product name</th>
                         <th>Bandwith Speed</th>
                         <th>Qty.</th>
-                        <th>Start price MRC</th>
+                        <th>Start price NRC</th>
                         <th>Extended net price</th>
                     </tr>
                     <tr lang="ar">
@@ -195,15 +184,7 @@
                         <th>مدة الالتزام بالأشهر/السنوات</th>
                     </tr>
                     <!-- Bellow Insert Data 7 cols -->
-                    <tr>
-                        <td>1</td>
-                        <td>SDWANB </td>
-                        <td>Edge Router1 OTC</td>
-                        <td></td>
-                        <td>1</td>
-                        <td>1200</td>
-                        <td>1200</td>
-                    </tr>
+                    {{InstallationFees/NRC}}
                 </table>
 
                 <!-- VAS Monthly Recurrent Charges - الرسوم الشهرية المتكررة للخدمات المضافة-->
@@ -231,15 +212,7 @@
                         <th>مدة الالتزام بالأشهر/السنوات</th>
                     </tr>
                     <!-- Bellow Insert Data 7 cols -->
-                    <tr>
-                        <td>1</td>
-                        <td>SDWANB </td>
-                        <td>Edge Router1 OTC</td>
-                        <td></td>
-                        <td>1</td>
-                        <td>1200</td>
-                        <td>1200</td>
-                    </tr>
+                    {{VASMonthlyRecurrentCharges}}
                 </table>
 
                 <!-- Device Details (if any) - الرسوم الشهرية المتكررة للخدمات المضافة-->
@@ -264,16 +237,7 @@
                         <th>الكمية</th>
                         <th>الرقم التسلسلي</th>
                     </tr>
-                    <!-- Bellow Insert Data 7 cols -->
-                    <!-- <tr>
-                        <td>1</td>
-                        <td>SDWANB </td>
-                        <td>Edge Router1 OTC</td>
-                        <td></td>
-                        <td>1</td>
-                        <td>1200</td>
-                        <td>1200</td>
-                    </tr> -->
+                    {{DeviceDetails}}
                 </table>
             </div>
         </div>
@@ -293,17 +257,17 @@
                 <table>
                     <tr>
                         <th align="left" lang="en">Employee Name:</th>
-                        <td align="center">TEST_BBLEAD14 -</td>
+                        <td align="center">{{EmployeeName}}</td>
                         <th align="right" lang="ar">اسم الموظف:</th>
                     </tr>
                     <tr>
                         <th align="left" lang="en">ID Number:</th>
-                        <td align="center">248058</td>
+                        <td align="center">{{IDNumber}}</td>
                         <th align="right" lang="ar">رقم الهوية:</th>
                     </tr>
                     <tr>
                         <th align="left" lang="en">Nationality:</th>
-                        <td align="center">Saudi Arabia</td>
+                        <td align="center">{{Nationality}}</td>
                         <th align="right" lang="ar">الجنسية:</th>
                     </tr>
                 </table>
@@ -315,17 +279,17 @@
                 <table>
                     <tr>
                         <th align="left" lang="en">Approval Transaction No.</th>
-                        <td align="center">3-O9AFS0W</td>
+                        <td align="center">{{ApprovalTransactionNumber}}</td>
                         <th align="right" lang="ar">رقم عملية الموافقة:</th>
                     </tr>
                     <tr>
                         <th align="left" lang="en">Approval Transaction Date:</th>
-                        <td align="center"></td>
+                        <td align="center">{{ApprovalTransactionDate}}</td>
                         <th align="right" lang="ar">تاريخ عملية الموافقة</th>
                     </tr>
                     <tr>
                         <th align="left" lang="en">Approval Transaction Time::</th>
-                        <td align="center"></td>
+                        <td align="center">{{ApprovalTransactionTime}}</td>
                         <th align="right" lang="ar">وقت العملية الموافقة</th>
                     </tr>
                 </table>
@@ -345,13 +309,13 @@
                     <tr>
                         <th align="left" lang="en">
                             <a href="https://www.stc.com.sa/content/stc/sa/en/business/connect.html" target="_blank">
-                                https://www.stc.com.sa/wps/wcm/connect/english/business/business
+                                https://www.stc.com.sa/wps/wcm/connect/ english/business/business
                             </a>
                         </th>
                         <td></td>
                         <th align="right" lang="ar">
                             <a href="https://www.stc.com.sa/content/stc/sa/ar/business/connect.html" target="_blank">
-                                https://www.stc.com.sa/wps/wcm/connect/english/business/business
+                                https://www.stc.com.sa/wps/wcm/connect/ arabic/business/business
                             </a>
                         </th>
                     </tr>
@@ -369,13 +333,13 @@
                     <tr>
                         <th align="left" lang="en">
                             <a href="https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/sla" target="_blank">
-                                https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/sla
+                                https://www.stc.com.sa/wps/wcm/connect/ english/privacyStatement/sla
                             </a>
                         </th>
                         <td></td>
                         <th align="right" lang="ar">
                             <a href="https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/sla" target="_blank">
-                                https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/sla
+                                https://www.stc.com.sa/wps/wcm/connect/ arabic/privacyStatement/sla
                             </a>
                         </th>
                     </tr>
@@ -397,19 +361,20 @@
                     <tr>
                         <th align="left" lang="en">
                             <a href="https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/dgt-terms-and-conditions" target="_blank">
-                                https://www.stc.com.sa/wps/wcm/connect/english/privacyStatement/dgt-terms-and-conditions
+                                https://www.stc.com.sa/wps/wcm/connect/ english/privacyStatement/dgt-terms-and-conditions
                             </a>
                         </th>
                         <td></td>
                         <th align="right" lang="ar">
                             <a href="https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/dgt-terms-and-conditions" target="_blank">
-                                https://www.stc.com.sa/wps/wcm/connect/arabic/privacyStatement/dgt-terms-and-conditions
+                                https://www.stc.com.sa/wps/wcm/connect/ arabic/privacyStatement/dgt-terms-and-conditions
                             </a>
                         </th>
                     </tr>
                     <tr>
                         <th align="left" lang="en">
-                            <img src="/resources/qr_left.png" width="100px" alt="">
+                            <img src="./resources/qr_left.png" width="100px" alt="">
+
                         </th>
                         <td>
                         </td>
@@ -417,6 +382,34 @@
                             <img src="./resources/qr_right.png" width="100px" alt="">
                         </th>
                     </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="page-break-before"></div>
+        <div class="bill-header">
+            <img src="./resources/new.PNG" alt="">
+        </div>
+        <div class="content">
+            <div class="appendix">
+                <!-- Appendix: List of Services - ملحق: قائمة الخدمات -->
+                <div class="table-label">
+                    <p lang="ar" align="center">ملحق: قائمة الخدمات</p>
+                    <p lang="en" align="center">Appendix: List of Services</p>
+                </div>
+                <table>
+                    <tr lang="en">
+                        <th>Service No / Circuit No</th>
+                        <th>Bandwidth Speed</th>
+                        <th>Product name</th>
+                    </tr>
+                    <tr lang="ar">
+                        <th>رقم الدائرة/رقم الخدمة</th>
+                        <th>النطاق السرعة</th>
+                        <th>اسم الخدمة/المنتج</th>
+                    </tr>
+                    {{AppendixList}}
                 </table>
             </div>
         </div>

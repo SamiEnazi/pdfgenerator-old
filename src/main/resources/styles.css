@@ -8,19 +8,19 @@
 
 @font-face {
   font-family: ArabicSTC;
-  src: url("resources\\NotoSansArabic-Light.ttf");
+  src: url("./resources/NotoSansArabic-Light.ttf");
   unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
 }
 
 @font-face {
   font-family: ArabicSTC-Bold;
-  src: url("resources\\NotoSansArabic-Regular.ttf");
+  src: url("./resources/NotoSansArabic-Regular.ttf");
   unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
 }
 
 @font-face {
   font-family: STCBase;
-  src: url("resources\\STCForward-Regular.ttf");
+  src: url("./resources/STCForward-Regular.ttf");
 }
 
 /* @font-face {
@@ -35,6 +35,9 @@
   margin: 0;
   width: 826px;
   height: 1069px;
+
+  /* width: 2480px;
+  height: 3508px; */
 }
 /* Page break before the specified element */
 .page-break-before {
@@ -124,20 +127,15 @@
   width: 100%;
 }
 
-.bill-total {
-  text-align: right;
-  margin-top: 20px;
-}
-
 .customer-info {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .customer-info td[align="center"] {
   font-family: "STCBase";
   max-width: 200px;
   overflow-wrap: break-word;
-  font-size: 11pt;
+  font-size: 10pt;
 }
 
 .customer-info th[align="left"] {
@@ -244,7 +242,7 @@
   text-align: center;
   font-size: 10pt !important;
   padding: 0 10px;
-  word-break: normal;
+  word-wrap: break-word;
 }
 .contract-details table td:first-child {
   padding: 0;
@@ -273,14 +271,6 @@
   margin-bottom: 1rem;
 }
 
-.employee-info table {
-  margin-bottom: 1rem;
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
 .employee-info .table-label p {
   display: inline;
   /* margin: 0 15px; */
@@ -291,6 +281,13 @@
 .employee-info .table-label p[align="right"] {
   font-size: 12pt;
   float: right;
+}
+.employee-info table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .employee-info th,
@@ -314,7 +311,61 @@
 }
 
 .employee-info .no-border a {
-  word-break: break-all;
+  word-wrap: break-word;
 }
 
 /* End .employee-info */
+
+/* Start .appendix */
+.appendix *:lang(en) {
+  font-family: "STCBase";
+  font-weight: lighter;
+  font-size: 10pt;
+}
+
+.appendix *:lang(ar) {
+  /* font-family: "ArabicSTC"; */
+  font-family: "ArabicSTC-Bold";
+  font-weight: normal;
+  font-size: 10pt;
+}
+
+.appendix .table-label {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.appendix .table-label p {
+  /* margin: 0 15px; */
+  font-size: 12pt;
+  color: #bbb;
+  border-bottom: 0.5px solid #bbb;
+  display: table;
+  width: fit-content;
+  margin: 0 auto;
+}
+.appendix .table-label p[align="right"] {
+  font-size: 12pt;
+}
+.appendix table {
+  border-spacing: 0;
+  width: 100%;
+}
+.appendix table th {
+  background-color: #6a01bb;
+  border: none;
+  color: #fff;
+  padding: 2px 0 10px 0;
+  vertical-align: top;
+}
+
+.appendix table td {
+  word-wrap: break-word;
+  text-align: center;
+  border-bottom: 1px solid #888;
+}
+.appendix table td:first-child,
+.appendix table td:last-child {
+  max-width: 40%;
+}
+/* End .appendix */
