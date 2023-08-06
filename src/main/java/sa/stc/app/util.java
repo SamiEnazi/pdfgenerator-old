@@ -5,7 +5,7 @@ import java.util.Map;
 public class util {
 	public static String replaceAllWithMap(String base, Map<String, String> dict) {
 		for (String key : dict.keySet()) {
-			base = base.replaceAll(key, dict.get(key));
+			base = base.replace(key, dict.get(key));
 		}
 		return base;
 	}

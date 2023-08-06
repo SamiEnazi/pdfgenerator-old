@@ -1,6 +1,4 @@
-:root {
-  --stc-purple: rgb(106, 1, 187);
-}
+
 
 * {
   box-sizing: border-box;
@@ -119,7 +117,7 @@
 }
 
 .customer-info th {
-  color: var(--stc-purple);
+  color: #6A01BB;
 }
 
 .bill-header {
@@ -233,9 +231,9 @@
 }
 
 .contract-details table th {
-  background-color: var(--stc-purple);
+  background-color: #6A01BB;
   color: #fff;
-  padding: 0 2px;
+  padding: 2px 2px 0 2px;
   vertical-align: top;
   height: 40px;
 }
@@ -302,7 +300,7 @@
 }
 
 .employee-info th {
-  color: var(--stc-purple);
+  color: #6A01BB;
 }
 
 .employee-info .no-border th,
@@ -356,7 +354,7 @@
   width: 100%;
 }
 .appendix table th {
-  background-color: var(--stc-purple);
+  background-color: #6A01BB;
   border: none;
   color: #fff;
   padding: 2px 0 10px 0;

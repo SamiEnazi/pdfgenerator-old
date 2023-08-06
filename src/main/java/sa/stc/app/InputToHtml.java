@@ -16,8 +16,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.jhonnymertz.wkhtmltopdf.wrapper.exceptions.PDFExportException;
@@ -28,15 +30,23 @@ import com.github.jhonnymertz.wkhtmltopdf.wrapper.exceptions.PDFExportException;
 public class InputToHtml {
 	private static final Logger logger = LoggerFactory.getLogger(InputToHtml.class);
 
-	@RequestMapping(value = "/create_pdf", method = RequestMethod.GET)
-	public ResponseEntity<byte[]> createPDF() {
-		System.out.println("==================================================");
-
+	@GetMapping("/create_pdf")
+	public ResponseEntity<?> createPDF(@RequestParam String isDownload) {
+		
+		
 		try {
-
-			String template = StreamUtils.copyToString(new ClassPathResource("pdf_templat.html").getInputStream(),
+			boolean isDownloadBool = isDownload.trim().equalsIgnoreCase("true"); 
+			
+			String template = StreamUtils.copyToString(new ClassPathResource("pdf_template.html").getInputStream(),
 					Charset.forName("utf-8"));
 
+			
+			
+			
+			
+			
+			
+			
 			Map<String, String> values = new HashMap<String, String>();
 
 			values.put("{{CustomerName}}", "Sami");
@@ -102,7 +112,9 @@ public class InputToHtml {
 			values.put("{{AppendixList}}", util.createRows(appendixList, false));
 
 			template = util.replaceAllWithMap(template, values);
-
+			
+			
+			
 			// Appendix: List of Services END
 
 			// Map<String,String> map = new HashMap<String, String>();
@@ -138,22 +150,25 @@ public class InputToHtml {
 			// pdf.addParam(new Param("--margin-right"), new Param("1mm"));
 			// pdf.addParam(new Param("--margin-left"), new Param("1mm"));
 
-			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-			headers.setContentDispositionFormData("attachment", "bill.pdf");
+			
+			if (isDownloadBool) {				
+				HttpHeaders headers = new HttpHeaders();
+				headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+				headers.setContentDispositionFormData("attachment", "bill.pdf");
+				return new ResponseEntity<>(new PDFCreator().getPDF(template), headers, HttpStatus.OK);
+			}
 
+			
 			// logger.info(System.getProperty("user.dir"));
 			// File file = pdf.saveAs("pdf.pdf");
-
-			System.out.println("==================================================");
-			return new ResponseEntity<>(new PDFCreator().getPDF(template), headers, HttpStatus.OK);
+			
+			
 		} catch (InterruptedException | IOException | PDFExportException e) {
 			// TODO Auto-generated catch block
 			// e.printStackTrace();
 			logger.error(ExceptionUtils.getStackTrace(e));
+			return new ResponseEntity<>("Error".getBytes(StandardCharsets.UTF_8), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
-		System.out.println("==================================================");
-		return new ResponseEntity<>("Error".getBytes(StandardCharsets.UTF_8), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
