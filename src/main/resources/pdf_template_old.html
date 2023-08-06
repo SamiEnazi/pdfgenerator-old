@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generic Bill - A4 Page</title>
+	<style>
+		@font-face {
+			font-family: "ArabicSTC";src: url(fonts/NotoSansArabic-Regular.ttf) format('truetype');font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "ArabicSTC";src: url(fonts/NotoSansArabic-SemiBold.ttf) format('truetype');font-weight: bold;
+		}
+		
+		@font-face {
+			font-family: "ArabicSTC";src: url(fonts/NotoSansArabic-Bold.ttf) format('truetype');font-weight: bolder;
+		}
+
+		@media print {
+			body {
+				width: 21cm;
+				height: 29.7cm;
+				margin: 30mm 45mm 30mm 45mm;
+				/* change the margins as you want them to be. */
+			}
+		}
+
+		/* Content container */
+		.content {
+			height: 100vh;
+			/* Make the content fill the full height of the page */
+		}
+
+		/* Bill styles */
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			background-color: #f0f0f0;
+		}
+
+		th,
+		td {
+			border: 1px solid #888;
+			padding: 10px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #5a3a9e;
+			color: white;
+		}
+
+		.bill-header {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.bill-total {
+			text-align: right;
+			margin-top: 20px;
+		}
+
+		.bill-customer,
+		.bill-company,
+		.bill-additional {
+			margin-top: 40px;
+		}
+
+		/* Page break */
+		.page-break {
+			page-break-after: always;
+		}
+
+		p {
+			font-family: "ArabicSTC", Arial, sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<div class="bill-header">
+			<h1>Generic Bill</h1>
+			<p>Invoice No: ###InvoiceNum###</p>
+			<p>عربي بحت</p>
+			<p>Date: ###Date###</p>
+		</div>
+		<div class="bill-customer">
+			<h3>Customer Information:</h3>
+			<table>
+				<tr>
+					<th>Name</th>
+					<td>John Doe</td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td>john.doe@example.com</td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td>123 Main Street, City, Country</td>
+				</tr>
+			</table>
+		</div>
+		<div class="bill-items">
+			<h3>Bill Items:</h3>
+			<table>
+				<tr>
+					<th>Item</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td>Item 1</td>
+					<td>$10.00</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>Sub-item 1.1</td>
+								<td>$5.00</td>
+							</tr>
+							<tr>
+								<td>Sub-item 1.2</td>
+								<td>$3.00</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>Item 2</td>
+					<td>$15.00</td>
+				</tr>
+				<tr>
+					<td>Item 3</td>
+					<td>$20.00</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>Sub-item 3.1</td>
+								<td>$7.50</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>Item 4</td>
+					<td>$12.00</td>
+				</tr>
+				<tr>
+					<td>Item 5</td>
+					<td>$18.00</td>
+				</tr>
+				<!-- Add more bill items here if needed -->
+			</table>
+		</div>
+		<div class="bill-additional">
+			<h3>Additional Charges:</h3>
+			<table>
+				<tr>
+					<th>Charge</th>
+					<th>Amount</th>
+				</tr>
+				<tr>
+					<td>Shipping</td>
+					<td>$###Shipping###</td>
+				</tr>
+				<tr>
+					<td>Tax</td>
+					<td>$###Tax###</td>
+				</tr>
+				<!-- Add more additional charges here if needed -->
+			</table>
+		</div>
+		<div class="bill-total">
+			<p>Total: $###Total###</p>
+		</div>
+		<div class="page-break"></div>
+		<div class="bill-company">
+			<h3>Company Details:</h3>
+			<table>
+				<tr>
+					<th>Company Name</th>
+					<td>ABC Corporation</td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td>info@abc-corp.com</td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td>789 Park Avenue, City, Country</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
